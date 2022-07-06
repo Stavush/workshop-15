@@ -21,15 +21,27 @@
 // 2.If an exception occurs, simply return null
 // 3.To test the function's result, see file index.js
 const calculateBalance = (data) => {
-    // TODO: implement me!
-    // TODO: implement me!
-    // TODO: implement me!
-    // TODO: implement me!
+  // TODO: implement me!
+  if (data.length === 0) {
+    return 0;
+  }
+  if (data === null) {
+    return null;
+  }
+  const sum = data
+    .map((client) => parseFloat(client.balance))
+    .reduce((i, a) => i + a);
+  if (sum) {
+    const avg = sum / data.length;
+    const res = avg.toFixed(2).toString();
+    return res;
+  } else {
+    return null;
+  }
 
-    return "0.00";
-    // TODO: return null if an error occurs
-}
+  // TODO: return null if an error occurs
+};
 
 module.exports = {
-    calculateBalance
-}
+  calculateBalance,
+};
